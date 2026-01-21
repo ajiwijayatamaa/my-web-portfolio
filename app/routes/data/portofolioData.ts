@@ -7,13 +7,12 @@ export interface Project {
   techStack: string[];
 }
 
-export interface Experience {
+export interface Education {
   id: number;
   title: string;
-  company: string;
+  university: string;
   period: string;
   description: string;
-  type: "work" | "education";
 }
 
 export const projects: Project[] = [
@@ -79,42 +78,14 @@ export const projects: Project[] = [
   },
 ];
 
-export const experiences: Experience[] = [
+export const educations: Education[] = [
   {
     id: 1,
-    title: "Senior Frontend Developer",
-    company: "TechCorp Inc.",
-    period: "2022 - Present",
+    title: "Bachelor of Information Systems",
+    university: "Universitas Pembangunan Nasional Veteran Jakarta",
+    period: "Aug 2021 - Jul 2025",
     description:
-      "Leading frontend architecture for enterprise applications, mentoring junior developers, and implementing modern design systems.",
-    type: "work",
-  },
-  {
-    id: 2,
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
-    period: "2020 - 2022",
-    description:
-      "Built scalable web applications from scratch, integrated third-party APIs, and optimized database performance.",
-    type: "work",
-  },
-  {
-    id: 3,
-    title: "Frontend Developer",
-    company: "Digital Agency",
-    period: "2018 - 2020",
-    description:
-      "Developed responsive websites and interactive web applications for various clients across industries.",
-    type: "work",
-  },
-  {
-    id: 4,
-    title: "Computer Science Degree",
-    company: "State University",
-    period: "2014 - 2018",
-    description:
-      "Bachelor's degree in Computer Science with focus on software engineering and web technologies.",
-    type: "education",
+      "Final Project: Design and Development of a Teak Furniture Sales System Using Laravel 11",
   },
 ];
 
@@ -138,7 +109,7 @@ export const categories = [
 
 export const personalInfo = {
   name: "Aji Wijayatama",
-  tittle: "Junior Full Stack Developer",
+  title: "Junior Full Stack Developer",
   tagline: "Eager to learn, ready to build impactful web solutions.",
   email: "ajiwijayatamaa@gmail.com",
   location: "East Jakarta",
