@@ -138,7 +138,7 @@ export const categories = [
 
 export const personalInfo = {
   name: "Aji Wijayatama",
-  title: "Junior Full Stack Developer",
+  tittle: "Junior Full Stack Developer",
   tagline: "Eager to learn, ready to build impactful web solutions.",
   email: "ajiwijayatamaa@gmail.com",
   location: "East Jakarta",
