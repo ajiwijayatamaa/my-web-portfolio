@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import AboutSection from "./components/about-section";
+import ExperienceSection from "./components/experience-section";
 import HeroSection from "./components/hero-section";
 import Navbar from "./components/navbar";
 
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <AboutSection />
+        <ExperienceSection />
       </main>
     </div>
   );
