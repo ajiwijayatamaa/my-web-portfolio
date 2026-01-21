@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import AboutSection from "./components/about-section";
 import ContactSection from "./components/contact-section";
 import ExperienceSection from "./components/experience-section";
+import Footer from "./components/footer";
 import HeroSection from "./components/hero-section";
 import Navbar from "./components/navbar";
 import ProjectsSection from "./components/project-section";
@@ -26,6 +27,7 @@ export default function Home() {
         <ProjectsSection />
         <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 }
