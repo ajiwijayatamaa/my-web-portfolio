@@ -3,6 +3,7 @@ import AboutSection from "./components/about-section";
 import ExperienceSection from "./components/experience-section";
 import HeroSection from "./components/hero-section";
 import Navbar from "./components/navbar";
+import ProjectsSection from "./components/project-section";
 import SkillsSection from "./components/skills-section";
 
 export function meta({}: Route.MetaArgs) {
@@ -21,6 +22,7 @@ export default function Home() {
         <AboutSection />
         <ExperienceSection />
         <SkillsSection />
+        <ProjectsSection />
       </main>
     </div>
   );

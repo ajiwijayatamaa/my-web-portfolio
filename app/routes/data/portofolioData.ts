@@ -2,7 +2,6 @@ export interface Project {
   id: number;
   title: string;
   thumbnail: string;
-  category: string;
   description: string;
   techStack: string[];
 }
@@ -21,7 +20,6 @@ export const projects: Project[] = [
     title: "E-Commerce Platform",
     thumbnail:
       "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
-    category: "Web Development",
     description:
       "Full-stack e-commerce platform with real-time inventory management and secure payment processing.",
     techStack: ["React", "Node.js", "MongoDB"],
@@ -31,7 +29,6 @@ export const projects: Project[] = [
     title: "AI Dashboard",
     thumbnail:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    category: "UI/UX Design",
     description:
       "Modern analytics dashboard with AI-powered insights and predictive analytics.",
     techStack: ["React", "TypeScript", "D3.js"],
@@ -41,7 +38,6 @@ export const projects: Project[] = [
     title: "Mobile Banking App",
     thumbnail:
       "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
-    category: "Mobile Development",
     description:
       "Secure mobile banking application with biometric authentication and instant transfers.",
     techStack: ["React Native", "Firebase", "Stripe"],
@@ -51,7 +47,6 @@ export const projects: Project[] = [
     title: "Healthcare Portal",
     thumbnail:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
-    category: "Web Development",
     description:
       "Patient management system with appointment scheduling and telemedicine integration.",
     techStack: ["Next.js", "PostgreSQL", "WebRTC"],
@@ -61,7 +56,6 @@ export const projects: Project[] = [
     title: "Fitness Tracker",
     thumbnail:
       "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&h=400&fit=crop",
-    category: "Mobile Development",
     description:
       "Comprehensive fitness tracking app with workout plans and nutrition monitoring.",
     techStack: ["Flutter", "Dart", "Firebase"],
@@ -71,7 +65,6 @@ export const projects: Project[] = [
     title: "Creative Agency Website",
     thumbnail:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
-    category: "UI/UX Design",
     description:
       "Award-winning agency website with immersive animations and 3D elements.",
     techStack: ["Three.js", "GSAP", "Tailwind CSS"],
@@ -98,13 +91,6 @@ export const skills = [
   "Figma",
   "Git",
   "REST APIs",
-];
-
-export const categories = [
-  "All",
-  "Web Development",
-  "Mobile Development",
-  "UI/UX Design",
 ];
 
 export const personalInfo = {
