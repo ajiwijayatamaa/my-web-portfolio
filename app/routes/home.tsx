@@ -10,7 +10,7 @@ import SkillsSection from "./components/skills-section";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
+    { title: "Aji Wijayatama | Junior Full Stack Developer" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
