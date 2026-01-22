@@ -27,31 +27,31 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, -30, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-20 -right-32 w-[500px] h-[500px] blob-shape bg-primary/10"
+          className="absolute -top-20 -right-32 w-[500px] h-[500px] decorative-circle blob-shape"
         />
 
         {/* Sage blob bottom-left */}
         <motion.div
           animate={{ y: [0, 20, 0], rotate: [0, -3, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-40 -left-40 w-[600px] h-[600px] blob-shape bg-secondary"
+          className="absolute -bottom-40 -left-40 w-[600px] h-[600px] decorative-circle blob-shape"
         />
 
         {/* Small accent circles */}
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
           transition={{ duration: 4, repeat: Infinity }}
-          className="absolute top-1/4 right-1/4 w-4 h-4 rounded-full bg-primary"
+          className="absolute top-1/4 right-1/4 decorative-dot"
         />
         <motion.div
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 5, repeat: Infinity }}
-          className="absolute top-1/3 left-1/4 w-3 h-3 rounded-full bg-accent"
+          className="absolute top-1/3 left-1/4 decorative-dot"
         />
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 3, repeat: Infinity }}
-          className="absolute bottom-1/3 right-1/3 w-2 h-2 rounded-full bg-primary/60"
+          className="absolute bottom-1/3 right-1/3 decorative-dot"
         />
       </div>
 
@@ -78,13 +78,10 @@ const HeroSection = () => {
               className="text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 leading-[1.1]"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Junior
+              Aji
               <br />
-              <span className="text-gradient">Full Stack</span>
+              <span className="text-gradient">Wijayatama</span>
               <br />
-              <span className="italic font-normal text-muted-foreground">
-                Developer
-              </span>
             </motion.h1>
 
             <motion.p

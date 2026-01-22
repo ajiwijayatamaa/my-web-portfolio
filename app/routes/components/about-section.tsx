@@ -30,40 +30,68 @@ const AboutSection = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Left column - Image with organic layout */}
+          {/* Left column - Replaced Image with Floating Tech Stack */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-            className="lg:col-span-5 relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-5 relative flex items-center justify-center min-h-[400px]"
           >
-            <div className="relative">
-              {/* Stacked images effect */}
-              <div className="absolute -top-4 -left-4 w-full h-full rounded-[2.5rem] bg-secondary/60 rotate-3" />
-              <div className="absolute -top-2 -left-2 w-full h-full rounded-[2.5rem] bg-primary/10 rotate-1" />
+            {/* Big Organic Background Blob */}
+            <div className="absolute inset-0 blob-shape bg-gradient-sage opacity-20 blur-2xl" />
+            <div className="absolute inset-10 blob-shape bg-gradient-warm opacity-10 animate-blob-morph" />
 
-              <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/5]">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face"
-                  alt={personalInfo.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Location badge */}
+            {/* Floating Icons Container */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* Center Core */}
               <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-6 -right-6 organic-card px-5 py-3 flex items-center gap-3"
+                animate={{ y: [0, -10, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="z-10 bg-card/80 backdrop-blur-md border border-border/50 p-8 rounded-[3rem] shadow-float text-center"
               >
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium">{personalInfo.location}</p>
-                  <p className="text-xs text-muted-foreground">Based in</p>
-                </div>
+                <div className="text-5xl mb-2">🚀</div>
+                <h3 className="font-serif text-2xl font-bold">Full Stack</h3>
+                <p className="text-xs text-primary font-medium tracking-widest uppercase">
+                  Developer
+                </p>
               </motion.div>
+
+              {/* Small Floating Circles Around (Skills) */}
+              {[
+                { icon: "⚛️", pos: "top-10 left-10", delay: 0 },
+                { icon: "🎨", pos: "top-20 right-10", delay: 1 },
+                { icon: "🛠️", pos: "bottom-10 left-20", delay: 0.5 },
+                { icon: "📱", pos: "bottom-20 right-20", delay: 1.5 },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  animate={{
+                    y: [0, -15, 0],
+                    rotate: [0, 10, 0],
+                  }}
+                  transition={{
+                    duration: 3 + i,
+                    repeat: Infinity,
+                    delay: item.delay,
+                    ease: "easeInOut",
+                  }}
+                  className={`absolute ${item.pos} w-16 h-16 rounded-2xl bg-card border border-border/40 shadow-soft flex items-center justify-center text-2xl`}
+                >
+                  {item.icon}
+                </motion.div>
+              ))}
             </div>
+
+            {/* Location badge tetap dipertahankan karena keren */}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -bottom-6 -right-6 organic-card px-5 py-3 flex items-center gap-3 z-20"
+            ></motion.div>
           </motion.div>
 
           {/* Right column - Content */}

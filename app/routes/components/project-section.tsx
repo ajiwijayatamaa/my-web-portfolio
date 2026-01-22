@@ -98,17 +98,20 @@ const ProjectsSection = () => {
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() =>
+                        window.open(`/${project.thumbnail}`, "_blank")
+                      }
                       className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg"
                     >
                       <ExternalLink size={20} />
                     </motion.button>
-                    <motion.button
+                    {/* <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       className="w-14 h-14 rounded-2xl bg-card flex items-center justify-center shadow-lg"
                     >
                       <Github size={20} />
-                    </motion.button>
+                    </motion.button> */}
                   </div>
                 </div>
 
