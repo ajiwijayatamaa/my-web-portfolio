@@ -16,8 +16,29 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message sent successfully! (This is a demo)");
+
+    // Format pesan untuk WhatsApp
+    const waMessage = `
+Hey! Ada yang ingin saya diskusikan 👋
+
+*Nama:* ${formData.name}
+*Email:* ${formData.email}
+*Subject:* ${formData.subject}
+
+*Pesan:*
+${formData.message}
+  `.trim();
+
+    // Encode pesan untuk URL
+    const encodedMessage = encodeURIComponent(waMessage);
+
+    // Nomor WhatsApp (tanpa +, -, atau spasi)
+    const waNumber = "6285285559091";
+
+    // Buka WhatsApp dengan pesan pre-filled
+    window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, "_blank");
+
+    // Reset form setelah redirect
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
@@ -216,7 +237,7 @@ const ContactSection = () => {
               className="btn-organic w-full flex items-center justify-center gap-3"
             >
               <Send size={18} />
-              Send Message
+              Send via WhatsApp
             </motion.button>
           </motion.form>
         </div>
