@@ -17,21 +17,18 @@ export interface Education {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    thumbnail:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
+    title: "Pricing Plans",
+    thumbnail: "img-2-project-html5-and-css- fundamental.jpeg",
     description:
-      "Full-stack e-commerce platform with real-time inventory management and secure payment processing.",
-    techStack: ["React", "Node.js", "MongoDB"],
+      "Choose the plan that best fits your needs. Start free and upgrade anytime.",
+    techStack: ["HTML5", "CSS3", "MongoDB"],
   },
   {
     id: 2,
-    title: "AI Dashboard",
-    thumbnail:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    description:
-      "Modern analytics dashboard with AI-powered insights and predictive analytics.",
-    techStack: ["React", "TypeScript", "D3.js"],
+    title: "E-Commerce",
+    thumbnail: "img-3-project-front-end-e-commerce-website.jpeg",
+    description: "Improve layout and styling for product modals",
+    techStack: ["HTML5", "CSS3"],
   },
   {
     id: 3,
