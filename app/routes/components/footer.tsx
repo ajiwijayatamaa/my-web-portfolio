@@ -112,13 +112,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-center items-center gap-4">
           <p className="text-muted-foreground text-sm">
             © {currentYear} {personalInfo.name}. All rights reserved.
-          </p>
-          <p className="text-muted-foreground text-sm flex items-center gap-2">
-            Made with <Heart size={14} className="text-primary" /> using React &
-            Tailwind
           </p>
         </div>
       </div>
