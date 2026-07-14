@@ -4,6 +4,9 @@ export interface Project {
   thumbnail: string;
   description: string;
   techStack: string[];
+  githubUrl?: string;
+  githubBackendUrl?: string;
+  deployUrl?: string;
 }
 
 export interface Education {
@@ -17,6 +20,55 @@ export interface Education {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Job Board Platform",
+    thumbnail: "pencari-kerja.png",
+    description:
+      "Full-stack job board platform with company job posting management, applicant tracking, pre-selection tests, interview scheduling with automated email reminders, and recruitment analytics dashboards.",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+    ],
+    githubUrl: "https://github.com/ajiwijayatamaa/job-board-frontend",
+    githubBackendUrl: "https://github.com/ajiwijayatamaa/job-board-backend",
+    deployUrl: "https://pencarikerja.vercel.app/",
+  },
+  {
+    id: 2,
+    title: "Event Management Platform",
+    thumbnail: "event-management.png",
+    description:
+      "Event management platform for organizers and attendees with authentication, referral system, event dashboard, statistics visualization, and automated email notifications.",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+    ],
+    githubUrl: "https://github.com/ajiwijayatamaa/event-management-frontend",
+    githubBackendUrl:
+      "https://github.com/ajiwijayatamaa/event-management-backend",
+    deployUrl: "https://eventifire.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Furniture Jati.ind",
+    thumbnail: "company-profile.png",
+    description:
+      "Responsive company profile website for a premium teak furniture business featuring landing page, gallery, custom furniture showcase, blog management, and authentication.",
+    techStack: ["React", "TypeScript", "Tailwind CSS"],
+    githubUrl:
+      "https://github.com/ajiwijayatamaa/-company-profile-react-router",
+    deployUrl: "https://galery-furniturejatiind.vercel.app/",
+  },
+  {
+    id: 4,
     title: "Pricing Plans",
     thumbnail: "img-2-project-html5-and-css- fundamental.jpeg",
     description:
@@ -24,47 +76,11 @@ export const projects: Project[] = [
     techStack: ["HTML5", "CSS3", "MongoDB"],
   },
   {
-    id: 2,
+    id: 5,
     title: "E-Commerce",
     thumbnail: "img-3-project-front-end-e-commerce-website.jpeg",
     description: "Improve layout and styling for product modals",
     techStack: ["HTML5", "CSS3"],
-  },
-  {
-    id: 3,
-    title: "Mobile Banking App",
-    thumbnail:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
-    description:
-      "Secure mobile banking application with biometric authentication and instant transfers.",
-    techStack: ["React Native", "Firebase", "Stripe"],
-  },
-  {
-    id: 4,
-    title: "Healthcare Portal",
-    thumbnail:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
-    description:
-      "Patient management system with appointment scheduling and telemedicine integration.",
-    techStack: ["Next.js", "PostgreSQL", "WebRTC"],
-  },
-  {
-    id: 5,
-    title: "Fitness Tracker",
-    thumbnail:
-      "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&h=400&fit=crop",
-    description:
-      "Comprehensive fitness tracking app with workout plans and nutrition monitoring.",
-    techStack: ["Flutter", "Dart", "Firebase"],
-  },
-  {
-    id: 6,
-    title: "Creative Agency Website",
-    thumbnail:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
-    description:
-      "Award-winning agency website with immersive animations and 3D elements.",
-    techStack: ["Three.js", "GSAP", "Tailwind CSS"],
   },
 ];
 
