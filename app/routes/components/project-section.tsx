@@ -1,24 +1,22 @@
-import { useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Search, ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Search } from "lucide-react";
+import { useRef, useState } from "react";
 import { projects } from "../data/portofolioData";
+import { FaGithub } from "react-icons/fa";
 
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredProjects = projects.filter((project) => {
-    const matchesSearch =
+  const filteredProjects = projects.filter(
+    (project) =>
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.techStack.some((tech) =>
         tech.toLowerCase().includes(searchQuery.toLowerCase()),
-      );
-    return matchesSearch;
-  });
+      ),
+  );
 
   return (
     <section id="projects" className="section-organic relative" ref={ref}>
@@ -43,14 +41,13 @@ const ProjectsSection = () => {
           </h2>
         </motion.div>
 
-        {/* Filters and Search - Organic layout */}
+        {/* Search */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col md:flex-row gap-6 justify-between items-center mb-12"
+          className="flex justify-center mb-12"
         >
-          {/* Search Input */}
           <div className="relative">
             <Search
               className="absolute left-5 top-1/2 -translate-y-1/2 text-muted-foreground"
@@ -66,24 +63,21 @@ const ProjectsSection = () => {
           </div>
         </motion.div>
 
-        {/* Bento Grid Projects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Uniform Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              className={`group ${index === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
             >
               <motion.div
                 whileHover={{ y: -6 }}
-                className="organic-card overflow-hidden h-full flex flex-col"
+                className="group organic-card overflow-hidden h-full flex flex-col"
               >
-                {/* Thumbnail with organic overlay */}
-                <div
-                  className={`relative overflow-hidden ${index === 0 ? "aspect-[16/10]" : "aspect-video"}`}
-                >
+                {/* Thumbnail */}
+                <div className="relative overflow-hidden aspect-video">
                   <img
                     src={project.thumbnail}
                     alt={project.title}
@@ -93,46 +87,62 @@ const ProjectsSection = () => {
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
 
-                  {/* Overlay Actions */}
-                  <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() =>
-                        window.open(`/${project.thumbnail}`, "_blank")
-                      }
-                      className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg"
-                    >
-                      <ExternalLink size={20} />
-                    </motion.button>
-                    {/* <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-14 h-14 rounded-2xl bg-card flex items-center justify-center shadow-lg"
-                    >
-                      <Github size={20} />
-                    </motion.button> */}
+                  {/* Hover Actions */}
+                  <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    {project.deployUrl && (
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => window.open(project.deployUrl, "_blank")}
+                        className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg"
+                        title="Live Demo"
+                      >
+                        <ExternalLink size={18} />
+                      </motion.button>
+                    )}
+                    {project.githubUrl && (
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => window.open(project.githubUrl, "_blank")}
+                        className="w-12 h-12 rounded-2xl bg-card flex items-center justify-center shadow-lg"
+                        title={
+                          project.githubBackendUrl
+                            ? "GitHub Frontend"
+                            : "GitHub"
+                        }
+                      >
+                        <FaGithub size={18} />
+                      </motion.button>
+                    )}
+                    {project.githubBackendUrl && (
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() =>
+                          window.open(project.githubBackendUrl, "_blank")
+                        }
+                        className="w-12 h-12 rounded-2xl bg-card flex items-center justify-center shadow-lg"
+                        title="GitHub Backend"
+                      >
+                        <FaGithub size={18} />
+                      </motion.button>
+                    )}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div
-                  className={`p-6 flex-1 flex flex-col ${index === 0 ? "md:p-8" : ""}`}
-                >
+                <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <h3
-                      className={`font-semibold group-hover:text-primary transition-colors ${
-                        index === 0 ? "text-2xl" : "text-xl"
-                      }`}
+                      className="text-xl font-semibold group-hover:text-primary transition-colors"
                       style={{ fontFamily: "Playfair Display, serif" }}
                     >
                       {project.title}
                     </h3>
-                    <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                    <ArrowUpRight className="w-5 h-5 shrink-0 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                   </div>
-                  <p
-                    className={`text-muted-foreground mb-4 flex-1 ${index === 0 ? "text-base" : "text-sm"}`}
-                  >
+                  <p className="text-sm text-muted-foreground mb-4 flex-1">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
